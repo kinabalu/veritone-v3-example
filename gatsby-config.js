@@ -24,8 +24,8 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         // I have created a dummy site for us to use with the plugins we discussed
-        baseUrl: 'veritone-wp-v3.mystic-engineering',
-        protocol: 'https',
+        baseUrl: 'veritone-wp-v3.mystic.engineering',
+        protocol: 'http',
         hostingWPCOM: false,
         // We will be using some advanced custom fields
         useACF: true,
@@ -40,7 +40,7 @@ module.exports = {
         },
         keepMediaSizes: false,
         searchAndReplaceContentUrls: {
-          sourceUrl: 'https://veritone-wp-v3.mystic-engineering',
+          sourceUrl: 'http://veritone-wp-v3.mystic.engineering',
           replacementUrl: 'https://localhost:8000'
         },
         includedRoutes: [
