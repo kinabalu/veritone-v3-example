@@ -18,10 +18,15 @@ export default ({ navOpen, toggleNav, toggleContact }) => {
       query {
         site {
           siteMetadata {
-            title
+            url
           }
         }
-        wordpressMenusMenusItems(slug: { eq: "header" }) {
+        wordpressSiteMetadata {
+          name
+          url
+          home
+        }
+        wordpressMenusMenusItems(slug: { eq: "navigation" }) {
           id
           slug
           items {
@@ -37,7 +42,7 @@ export default ({ navOpen, toggleNav, toggleContact }) => {
     <header className='header clear'>
       <div className='wrapper'>
         <Link to='/' className='logo'>
-        {data.site.siteMetadata.title}
+        {data.wordpressSiteMetadata.name}
         </Link>
         <label id='mobile-hamburger-label' htmlFor='mobile-hamburger-checkbox'>
           <img src={hamburger} alt='Toggle Menu' />
@@ -59,7 +64,7 @@ export default ({ navOpen, toggleNav, toggleContact }) => {
                      key={index}
                      style={navOpen ? { transitionDelay: `${(index + 1) * 100}ms` } : null}>
                      {!contact ?
-                        <Link to={slug === 'staging.emergence.design' ? `/` : slug}>
+                        <Link to={slug === data.site.siteMetadata.url ? `/` : slug}>
                         {title}
                         </Link>
                         : <a href='#contact'>

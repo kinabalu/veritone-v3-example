@@ -7,7 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Veritone v3`
+    title: `Veritone v3`,
+    url: 'veritone-wp-v3.mystic.engineering'
   },
   plugins: [
     {
@@ -25,12 +26,12 @@ module.exports = {
       options: {
         // I have created a dummy site for us to use with the plugins we discussed
         baseUrl: 'veritone-wp-v3.mystic.engineering',
-        protocol: 'http',
+        protocol: 'https',
         hostingWPCOM: false,
         // We will be using some advanced custom fields
         useACF: true,
         acfOptionPageIds: [],
-        verboseOutput: true,
+        verboseOutput: false,
         perPage: 100,
         // Set how many simultaneous requests are sent at once.
         concurrentRequests: 1,
